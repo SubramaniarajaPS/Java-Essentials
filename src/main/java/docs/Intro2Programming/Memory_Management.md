@@ -63,7 +63,7 @@ String str3 = "Class";
 ![image](https://github.com/user-attachments/assets/e4807464-03ce-4070-8bf2-8c314e94d269)
 
 
-*To know more about memory management - Refer https://www.javatpoint.com/memory-management-in-java *
+*To know more about memory management* Refer https://www.javatpoint.com/memory-management-in-java
 
 
 
