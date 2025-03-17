@@ -5,7 +5,7 @@ Memory management is the process of controlling and coordinating the way a softw
 ![image](https://github.com/user-attachments/assets/6ee10312-5911-4cb2-a2e1-7def80fc7ff9)
 
 ## Stack 
-- *Static memory allocation.* ( Allocating memory at compile time )
+- *Static memory allocation* ( Allocating memory at compile time ).
 - *Last-In-First-Out.*
 - The process of storing and retrieving data from the stack is very fast as there is no lookup required.
 - Data that is stored on the stack has to be *finite and static* i.e. size of the data is known at *compile time.*
@@ -22,9 +22,9 @@ Memory management is the process of controlling and coordinating the way a softw
 - JVM will throw *java.lang.StackOverFlowError* for stack.
 
 ## Heap
-- *Dynamic memory allocation.* ( Allocating memory at run time )
+- *Dynamic memory allocation* ( Allocating memory at run time ).
 - The program needs to look up the data in heap using pointers.
-- It is slower than stack
+- It is slower than stack.
 - Data with dynamic size can be stored here.
 - Heap is shared among threads of an application.
 - Due to its dynamic nature heap is trickier to manage.
