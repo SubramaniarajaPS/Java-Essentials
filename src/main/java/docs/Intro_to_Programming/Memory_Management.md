@@ -66,6 +66,7 @@ String str3 = "Class";
 *To know more about memory management*
 
 Refer from the below links - 
+
 https://medium.com/@psdevraye/memory-management-in-java-interview-questions-and-answers-abaa826aec61
 
 https://www.tpointtech.com/memory-management-in-java
