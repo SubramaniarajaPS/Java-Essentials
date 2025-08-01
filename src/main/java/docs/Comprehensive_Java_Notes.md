@@ -60,16 +60,17 @@ A basic Java program requires a class declaration and a main method as its entry
 
 Example: Hello World Program
 
-    ```Java
-    public class MyFirstJavaProgram {
-        /* This is my first java program.
-         * This will print 'Hello, World!' as the output
-         */
-        public static void main(String []args) {
-            System.out.println("Hello, World!"); // prints Hello, World!
-        }
+```Java
+public class MyFirstJavaProgram {
+
+/* This is my first java program.
+* This will print 'Hello, World!' as the output
+*/
+    public static void main(String []args) {
+        System.out.println("Hello, World!"); // prints Hello, World!
     }
-    ```
+}
+```
 
 - public class MyFirstJavaProgram: Defines a public class named MyFirstJavaProgram. In Java, every source file (.java) can have one top-level public class, and that class must match the name of the source file. A class is a collection of related code.
 
