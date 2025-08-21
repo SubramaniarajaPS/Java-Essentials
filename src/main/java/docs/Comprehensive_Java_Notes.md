@@ -51,7 +51,7 @@ JVM Architecture Components:
     - Method Area: Logically a part of the heap, it holds static variables and information about native methods.
     - JVM Stacks: A stack is created when a thread is created. It is used to store method execution data, including local variables, method arguments, and return addresses. Each thread has its own stack, ensuring thread safety. Once a method completes execution, its associated stack frame is automatically removed.
     - Native Method Area: Responsible for holding information about Java methods implemented in other languages like C or C++.
-    - Program Counter (PC) Registers: Each JVM thread has its PC (program counter) register. For a non-native method, the PC register stores the address of the current instruction being executed. For a native method, the PC register has an undefined value
+    - Program Counter (PC) Registers: Each JVM thread has its PC (program counter) register. For a non-native method, the PC register stores the address of the current instruction being executed. For a native method, the PC register has an undefined value.
 
 
 3. Execution Engine: The final stage of the JVM, responsible for executing the class file. It has three main components:
