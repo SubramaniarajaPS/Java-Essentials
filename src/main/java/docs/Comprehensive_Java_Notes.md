@@ -37,7 +37,13 @@ Understanding how Java works involves three core components:
 
 JVM Architecture Components:
 
-1. Class Loader: Loads .class files (bytecode) into main memory. The class containing the main() method is usually loaded first. It has three phases: loading, linking, and initialization.
+1. Class Loader: Loads .class files (bytecode) into main memory. The class containing the main() method is usually loaded first. It has three phases,
+    - Loading : Class Loading is a three step process of: the JVM locating the binary representation of a class or interface (.class), deriving the class or interface from it, and loading that information into the JVM method area.
+    - Linking: 
+        - Verification: Process of ensuring the class or interface is structurally correct.
+        - Preparation: Handles the initialization of static fields in a class to their default values.
+        - Resolution: Ensures that the JVM can locate and access the necessary classes and their members when they are used.
+    - Initialization: Final stage where the JVM executes the class's initialization method (the <clinit> method). This involves executing static initializers (static blocks) and assigning initial values to static variables. 
     
 2. Runtime Memory/Data Area: The JVM defines various runtime data areas used during program execution. These include:
 
