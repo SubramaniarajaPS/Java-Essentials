@@ -58,7 +58,12 @@ JVM Architecture Components:
 
     - Interpreter: Reads bytecode line by line and converts it into machine instructions. It is quick to load and fast for execution.
     - JIT (Just-In-Time) Compiler: Improves performance by compiling bytecode into native machine code during runtime.
-    - Garbage Collector: An automatic memory management process that removes unused objects from the heap, freeing up memory. This eliminates the need for manual memory deallocation by developers.
+    - [Garbage Collector](https://developers.redhat.com/articles/2021/08/20/stages-and-levels-java-garbage-collection#memory_management_and_avoiding_memory_leaks): An automatic memory management process that removes unused objects from the heap, freeing up memory. This eliminates the need for manual memory deallocation by developers.
+        - There are three basic steps in garbage collection:
+            - Mark: The garbage collector scans the heap memory segment and marks all the live objects—that is, objects to which the application holds references. All the objects that have no references to them are eligible for removal.
+            - Sweep: The garbage collector recycles all the unreferenced objects from the heap.
+            - Compact: The sweep step tends to leave many empty regions in heap memory, causing memory fragmentation. Therefore, the compact phase helps arrange the objects into the contiguous blocks at the start of the heap. This in turn helps with the allocation of new objects in sequence.
+             
 
 
 ### Basic Java Syntax and Program Structure
