@@ -87,19 +87,16 @@ public class MyFirstJavaProgram {
 - public class MyFirstJavaProgram: Defines a public class named MyFirstJavaProgram. In Java, every source file (.java) can have one top-level public class, and that class must match the name of the source file. A class is a collection of related code.
 
 - public static void main(String []args): This is the main method, which serves as the entry point for your program. The JVM specifically looks for a static method named main that is public, takes an array of strings (String args[]) as a parameter, and does not return a value (void).
-- public: An access modifier that makes the class or method accessible from anywhere.
-- static: A keyword that means the method belongs to the class itself, rather than any specific object of that class.
-- void: Indicates that the method does not return any value.
-- String[] args: An array of String objects to hold command-line arguments passed to the program upon execution.
-
-- System.out.println("Hello, World!");: This statement prints the string "Hello, World!" to the console. System is a class, out is a static member of the System class, and println() is a method to print output followed by a new line.
-
-- Semicolons (;): Semicolons are mandatory at the end of most statements in Java. If omitted, the program will fail to compile.
-
-- Comments: Used for notes within the code, ignored by the compiler.
-- Single-line comments: Begin with //.
-- Multi-line comments: Begin with /* and end with */. Can span multiple lines.
-- Javadoc comments: Begin with /** and end with */. Used for generating HTML documentation. They can contain HTML tags and special "@doc tags" like @see, @version, @author, @since, @param, @return, @throws.
+    - public: An access modifier that makes the class or method accessible from anywhere.
+    - static: A keyword that means the method belongs to the class itself, rather than any specific object of that class.
+    - void: Indicates that the method does not return any value.
+    - String[] args: An array of String objects to hold command-line arguments passed to the program upon execution.
+    - System.out.println("Hello, World!");: This statement prints the string "Hello, World!" to the console. System is a class, out is a static member of the System class, and println() is a method to print output followed by a new line.
+    - Semicolons (;): Semicolons are mandatory at the end of most statements in Java. If omitted, the program will fail to compile.
+    - Comments: Used for notes within the code, ignored by the compiler.
+        - Single-line comments: Begin with //.
+        - Multi-line comments: Begin with /* and end with */. Can span multiple lines.
+        - Javadoc comments: Begin with /** and end with */. Used for generating HTML documentation. They can contain HTML tags and special "@doc tags" like @see, @version, @author, @since, @param, @return, @throws.
 
 Coding Standards/Naming Conventions:
 
@@ -169,22 +166,22 @@ Control flow statements allow programs to make decisions and execute blocks of c
 
 - Decision Making Statements:
 
-- if-then and if-then-else: Executes a block of code if a condition is true (if) and an alternative block if the condition is false (else). Nested if statements are possible, allowing for checking additional conditions after an initial one is met.
-- switch Statement: Allows execution of a block of code based on matching a variable's value against different case values.
+    - if and if-else: Executes a block of code if a condition is true (if) and an alternative block if the condition is false (else). Nested if statements are possible, allowing for checking additional conditions after an initial one is met.
+    - switch Statement: Allows execution of a block of code based on matching a variable's value against different case values.
 
 - Loop Control Statements: Repeat a set of instructions multiple times based on a condition.
 
-- for Loop: Used when the number of iterations is known or definite. It has four parts: initialization, condition, loop body, and update.
-- while Loop: Executes a block of statements repeatedly as long as a given condition remains true. Useful when the number of iterations is not known beforehand, like reading a file until the end.
-- do-while Loop: Similar to while loop, but the block of code is executed at least once before the condition is checked. It's an exit-controlled loop.
-- Enhanced for Loop (for-each loop): Introduced in Java 5 to simplify iteration over arrays and collections, making code cleaner and more readable, especially when the exact index is not required.
-- Nested Loops: A loop inside another loop, often used when working with matrices or multi-dimensional data structures like 2D arrays.
+    - for Loop: Used when the number of iterations is known or definite. It has four parts: initialization, condition, loop body, and update.
+    - while Loop: Executes a block of statements repeatedly as long as a given condition remains true. Useful when the number of iterations is not known beforehand, like reading a file until the end.
+    - do-while Loop: Similar to while loop, but the block of code is executed at least once before the condition is checked. It's an exit-controlled loop.
+    - Enhanced for Loop (for-each loop): Introduced in Java 5 to simplify iteration over arrays and collections, making code cleaner and more readable, especially when the exact index is not required.
+    - Nested Loops: A loop inside another loop, often used when working with matrices or multi-dimensional data structures like 2D arrays.
 
 - Branching Statements:
 
-- break: Used inside loops and switch statements to terminate the current loop or switch case immediately and transfer control to the statement directly after the loop/switch.
-- continue: Used inside loops to skip the current iteration and move directly to the next iteration of the loop.
-- return: Used to exit from a method, either with or without a value (for void methods).
+    - break: Used inside loops and switch statements to terminate the current loop or switch case immediately and transfer control to the statement directly after the loop/switch.
+    - continue: Used inside loops to skip the current iteration and move directly to the next iteration of the loop.
+    - return: Used to exit from a method, either with or without a value (for void methods).
 
 
 ### Object-Oriented Programming (OOP) Concepts
@@ -208,12 +205,10 @@ OOP is a fundamental concept in Java that allows developers to structure code us
 
 **Methods**
 
-- Method: 
-
-    - A block of reusable code that performs a specific task or function (i.e., behavior). Methods define the actions an object can perform.
-    - Can take inputs via arguments/parameters and return values.
-    - Can have no input arguments and no return values (void type method).
-    - All methods in Java must belong to a class.
+- A block of reusable code that performs a specific task or function (i.e., behavior). Methods define the actions an object can perform.
+- Can take inputs via arguments/parameters and return values.
+- Can have no input arguments and no return values (void type method).
+- All methods in Java must belong to a class.
     
 - Method Overloading: 
 
@@ -225,37 +220,31 @@ OOP is a fundamental concept in Java that allows developers to structure code us
 
 **Constructors**
 
-- Constructor:
+- A special method within a class that is automatically called when an object is created (instantiated). Its main job is to initialize the object, setting up its internal state or assigning default values to its attributes.
+- Have the same name as the class and do not have a return type.
+- Default Constructor: If no constructor is explicitly defined, Java provides a default no-argument constructor.
+- Parameterized Constructor: Takes arguments to initialize object attributes with specific values.
+- Overloaded Constructors: A class can have multiple constructors with different parameter lists, similar to overloaded methods, allowing objects to be initialized in various ways.
 
-    - A special method within a class that is automatically called when an object is created (instantiated). Its main job is to initialize the object, setting up its internal state or assigning default values to its attributes.
-    - Have the same name as the class and do not have a return type.
-    - Default Constructor: If no constructor is explicitly defined, Java provides a default no-argument constructor.
-    - Parameterized Constructor: Takes arguments to initialize object attributes with specific values.
-    - Overloaded Constructors: A class can have multiple constructors with different parameter lists, similar to overloaded methods, allowing objects to be initialized in various ways.
+
 
 **Inheritance**
 
-- Inheritance: 
+- A mechanism where one class (subclass/child class) inherits the attributes and methods from another class (superclass/parent class). This promotes code reusability.
+- extends keyword: Used to establish an inheritance relationship (Dog extends Animal).
+- Every class in Java, if it doesn't explicitly extend another class, implicitly extends the Object class, which is the root class in the Java hierarchy.
+- super keyword: Used within a subclass to refer to the immediate superclass's members (fields, methods, or constructors). For example, super() calls the superclass's constructor.
+- Multi-level Inheritance: A class can inherit from a parent, which in turn inherits from a grandparent (e.g., Class C extends Class B, and Class B extends Class A).
+- No Multiple Inheritance (of classes): Java does not support multiple inheritance directly for classes (a class cannot extend from two parent classes). This avoids complex issues like the "diamond problem". However, it can implement multiple interfaces (see Abstraction).
 
-    - A mechanism where one class (subclass/child class) inherits the attributes and methods from another class (superclass/parent class). This promotes code reusability.
-    - extends keyword: Used to establish an inheritance relationship (Dog extends Animal).
-    - Every class in Java, if it doesn't explicitly extend another class, implicitly extends the Object class, which is the root class in the Java hierarchy.
-    - super keyword: Used within a subclass to refer to the immediate superclass's members (fields, methods, or constructors). For example, super() calls the superclass's constructor.
-    - Multi-level Inheritance: A class can inherit from a parent, which in turn inherits from a grandparent (e.g., Class C extends Class B, and Class B extends Class A).
-    - No Multiple Inheritance (of classes): Java does not support multiple inheritance directly for classes (a class cannot extend from two parent classes). This avoids complex issues like the "diamond problem". However, it can implement multiple interfaces (see Abstraction).
+ **Polymorphism** (Greek: "poly" means many, "morph" means shape): 
 
- **Polymorphism**
-
-- Polymorphism (Greek: "poly" means many, "morph" means shape): 
-
-    - The concept of "many shapes" or forms. In Java, it means that objects can identify as other objects, allowing objects of diverse types of classes to be regarded as the object of the superclass.
-    - Achieved through method overriding (runtime polymorphism) where a single method call can behave differently based on the actual type of the object at runtime.
+- The concept of "many shapes" or forms. In Java, it means that objects can identify as other objects, allowing objects of diverse types of classes to be regarded as the object of the superclass.
+- Achieved through method overriding (runtime polymorphism) where a single method call can behave differently based on the actual type of the object at runtime.
 
 **Abstraction**
 
-- Abstraction:
-
-    - The process of hiding implementation details and showing only the essential features or functionality to the user.
+- The process of hiding implementation details and showing only the essential features or functionality to the user.
     
 - Abstract Classes:
 
@@ -278,15 +267,14 @@ OOP is a fundamental concept in Java that allows developers to structure code us
 
 **Encapsulation**
 
-- Encapsulation: 
+- The process of gathering (or binding) data (attributes) and the methods that operate on that data together within a single unit, which is a class. It often involves information hiding by restricting direct access to some of an object's components, which is achieved using access modifiers.
+- Access Modifiers: Define how the members of a class (variables, methods, constructors, nested classes, interfaces) and the class itself can be accessed from other parts of the program.
+    ▪ public: Accessible from anywhere.
+    ▪ private: Accessible only within the declaring class.
+    ▪ protected: Accessible within the declaring class, its subclasses, and classes in the same package.
+    ▪ default (no keyword): Accessible only within the same package.
 
-    - The process of gathering (or binding) data (attributes) and the methods that operate on that data together within a single unit, which is a class. It often involves information hiding by restricting direct access to some of an object's components, which is achieved using access modifiers.
-    - Access Modifiers: Define how the members of a class (variables, methods, constructors, nested classes, interfaces) and the class itself can be accessed from other parts of the program.
-            ▪ public: Accessible from anywhere.
-            ▪ private: Accessible only within the declaring class.
-            ▪ protected: Accessible within the declaring class, its subclasses, and classes in the same package.
-            ▪ default (no keyword): Accessible only within the same package.
-
+    
 **Association, Aggregation, and Composition**
 
   These are types of relationships between objects.
@@ -338,22 +326,25 @@ The Collections Framework is a set of interfaces and classes in java.util packag
 
 - Data Structures within Collections Framework:
 
-- List (interface): 
-        Represents an ordered collection (sequence) of elements, allowing duplicate values. Elements are accessed by their integer index.
-        ▪ ArrayList: A resizable array implementation of the List interface.
-        ▪ LinkedList: A doubly-linked list implementation of the List interface.
+- List (interface):
+
+Represents an ordered collection (sequence) of elements, allowing duplicate values. Elements are accessed by their integer index.
+    ▪ ArrayList: A resizable array implementation of the List interface.
+    ▪ LinkedList: A doubly-linked list implementation of the List interface.
     
-- Set (interface): 
-        Represents a collection that does not allow duplicate elements. Sets do not maintain any specific order inherently, though some implementations do.
-        ▪ HashSet: Implements Set using a hash table for storage. Offers constant-time performance for basic operations (add, remove, contains, size).
-        ▪ LinkedHashSet: Maintains insertion order.
-        ▪ TreeSet: Stores elements in a sorted order.
-    
-- Map (interface): 
-        Stores key-value pairs, where keys must be unique, but values can be duplicated. Maps do not maintain any order naturally.
-        ▪ HashMap: Implements Map using a hash table. Provides fast lookups using hash codes.
-        ▪ LinkedHashMap: Maintains insertion order.
-        ▪ TreeMap: Stores key-value pairs in a sorted order based on the natural ordering of keys or a provided comparator.
+- Set (interface):
+
+Represents a collection that does not allow duplicate elements. Sets do not maintain any specific order inherently, though some implementations do.
+    ▪ HashSet: Implements Set using a hash table for storage. Offers constant-time performance for basic operations (add, remove, contains, size).
+    ▪ LinkedHashSet: Maintains insertion order.
+    ▪ TreeSet: Stores elements in a sorted order.
+        
+- Map (interface):
+  
+ Stores key-value pairs, where keys must be unique, but values can be duplicated. Maps do not maintain any order naturally.
+    ▪ HashMap: Implements Map using a hash table. Provides fast lookups using hash codes.
+    ▪ LinkedHashMap: Maintains insertion order.
+    ▪ TreeMap: Stores key-value pairs in a sorted order based on the natural ordering of keys or a provided comparator.       
     
 - Iterator: An interface used to traverse elements in a Collection sequentially. Provides methods like hasNext(), next(), and remove().
     
