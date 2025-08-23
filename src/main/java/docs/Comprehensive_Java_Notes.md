@@ -373,26 +373,12 @@ Exception handling in Java allows developers to manage runtime errors effectivel
 
 - Exception Handling Mechanisms:
 
-- try-catch Block: A mechanism to handle exceptions. The code that might throw an exception is placed inside the try block. If an exception occurs, it is caught by the catch block, preventing abrupt program termination and allowing the application to continue running.
-- finally Block: An optional block that always executes, regardless of whether an exception occurred or was handled. It's often used for resource cleanup, such as closing files or database connections.
-- throw keyword: Used to explicitly throw an exception from within a method or block of code.
-- throws keyword: Used in a method signature to declare that a method might throw a certain type of checked exception. This informs calling methods that they need to handle the declared exception. It's not for throwing multiple exceptions.
-- Custom Exceptions: You can create your own exception classes by extending Exception or RuntimeException. This allows you to define application-specific errors.
-- Chained Exceptions: Allows associating one exception with another, where one exception describes the cause of another.
-
-
-### Memory Management
-
-Java memory management is a fundamental concept involving the automatic allocation and deallocation of objects, managed by the Java Virtual Machine (JVM).
-
-- The JVM uses a garbage collector to automatically remove unused objects, freeing up memory in the background. This eliminates the need for developers to manually handle memory management, which is prone to errors like memory leaks.
-
-- A memory leak occurs when a program continues to use memory but fails to release it when it's no longer needed, leading to slow performance and potential crashes.
-
-- JVM Memory Areas (as discussed in Section 2, but re-emphasized for memory management):
-- Heap: Where objects and arrays are stored.
-- JVM Stacks: Stores method execution data, local variables, method arguments, and return addresses for each thread.
-- Method Area: Stores static variables and class information.
+    - try-catch Block: A mechanism to handle exceptions. The code that might throw an exception is placed inside the try block. If an exception occurs, it is caught by the catch block, preventing abrupt program termination and allowing the application to continue running.
+    - finally Block: An optional block that always executes, regardless of whether an exception occurred or was handled. It's often used for resource cleanup, such as closing files or database connections.
+    - throw keyword: Used to explicitly throw an exception from within a method or block of code.
+    - throws keyword: Used in a method signature to declare that a method might throw a certain type of checked exception. This informs calling methods that they need to handle the declared exception. It's not for throwing multiple exceptions.
+    - Custom Exceptions: You can create your own exception classes by extending Exception or RuntimeException. This allows you to define application-specific errors.
+    - Chained Exceptions: Allows associating one exception with another, where one exception describes the cause of another.
 
 
 ### Input/Output (I/O)
@@ -400,20 +386,19 @@ Java memory management is a fundamental concept involving the automatic allocati
 Java's I/O system is designed to handle various data sources and sinks (files, console, network connections) in diverse ways (sequential, random-access, buffered, binary, character, by lines/words).
 
 - Streams: The Java I/O library often uses the abstraction of a stream, which represents any data source or sink as an object capable of producing or receiving data. The stream hides the details of the actual I/O device.
-- InputStream / Reader: Classes for reading a single byte or an array of bytes/characters.
-- OutputStream / Writer: Classes for writing a single byte or an array of bytes/characters.
-- Byte Streams: Handle raw binary data.
-- Character Streams: Handle character data, supporting Unicode.
-- Buffered Streams: Provide improved performance by buffering data.
+    - InputStream / Reader: Classes for reading a single byte or an array of bytes/characters.
+    - OutputStream / Writer: Classes for writing a single byte or an array of bytes/characters.
+    - Byte Streams: Handle raw binary data.
+    - Character Streams: Handle character data, supporting Unicode.
+    - Buffered Streams: Provide improved performance by buffering data.
 
 - File Handling: Working with files involves classes in the java.io package.
-- File Class: Used to create an object representing a file or directory.
-- FileReader: Used for reading character files. A FileNotFoundException can occur if the specified file does not exist.
-- FileWriter: Used for writing small to medium-sized text files. Requires a try-catch block.
-- BufferedReader and BufferedWriter: Provide better performance for reading/writing large amounts of text, typically combined with FileReader/FileWriter.
-
+    - File Class: Used to create an object representing a file or directory.
+    - FileReader: Used for reading character files. A FileNotFoundException can occur if the specified file does not exist.
+    - FileWriter: Used for writing small to medium-sized text files. Requires a try-catch block.
+    - BufferedReader and BufferedWriter: Provide better performance for reading/writing large amounts of text, typically combined with FileReader/FileWriter.
+    
 - User Input: The Scanner class (from java.util.Scanner) is commonly used to accept user input from the console. It's good practice to close the scanner when done to prevent unexpected behavior.
-
 - Command Line I/O: System.in for standard input, System.out for standard output.
 
 
@@ -421,23 +406,23 @@ Java's I/O system is designed to handle various data sources and sinks (files, c
 
 - Generics: 
     
-- Allow classes and methods to operate on objects of various types while providing compile-time type safety. They use type parameters when defining classes/methods and type arguments when instantiating them (e.g., ArrayList### <String>). While powerful, Java's generics have certain limitations compared to more "pure" implementations in other languages.
+    - Allow classes and methods to operate on objects of various types while providing compile-time type safety. They use type parameters when defining classes/methods and type arguments when instantiating them (e.g., ArrayList### <String>). While powerful, Java's generics have certain limitations compared to more "pure" implementations in other languages.
 
 - Annotations (Metadata): 
     
-- Provide a formalized way to add information to code that can be used later by compilers, runtime, or other tools. Examples include @Override (already discussed), @FunctionalInterface, and @Deprecated. They combine metadata with source code, making it neater and easier to maintain.
+    - Provide a formalized way to add information to code that can be used later by compilers, runtime, or other tools. Examples include @Override (already discussed), @FunctionalInterface, and @Deprecated. They combine metadata with source code, making it neater and easier to maintain.
 
 - Inner Classes: 
     
-- A class definition placed within another class definition. They can access members of the enclosing object, including private ones.
-- Anonymous Inner Classes: Classes that don't have a name and cannot be reused. They are often used for one-time uses when custom behavior is needed without creating a new class.
+    - A class definition placed within another class definition. They can access members of the enclosing object, including private ones.
+    - Anonymous Inner Classes: Classes that don't have a name and cannot be reused. They are often used for one-time uses when custom behavior is needed without creating a new class.
 
 - pass-by-value vs. pass-by-reference: Java is always pass by value.
 
-- For primitive variables, the actual value is copied and passed to the method.
-- For non-primitive variables (objects), the value of the memory address (the reference) is copied and passed. This means the method receives a copy of the reference, and both the original reference and the copied reference point to the same object in the heap.
-- If the method modifies the contents of the object that the passed-in reference points to, those changes will affect the original object.
-- However, if the method reassigns the passed-in reference to a new object, the original object outside the method remains unchanged because the copied reference now points to a different object.
+    - For primitive variables, the actual value is copied and passed to the method.
+    - For non-primitive variables (objects), the value of the memory address (the reference) is copied and passed. This means the method receives a copy of the reference, and both the original reference and the copied reference point to the same object in the heap.
+    - If the method modifies the contents of the object that the passed-in reference points to, those changes will affect the original object.
+    - However, if the method reassigns the passed-in reference to a new object, the original object outside the method remains unchanged because the copied reference now points to a different object.
 
 - Java Database Connectivity (JDBC): A fundamental technology that allows Java applications to interact with databases. Developers can perform tasks like data insertion, retrieval, and modification.
 
