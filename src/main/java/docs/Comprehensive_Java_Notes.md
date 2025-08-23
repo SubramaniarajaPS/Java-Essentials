@@ -328,24 +328,24 @@ The Collections Framework is a set of interfaces and classes in java.util packag
 
 - List (interface):
 
-Represents an ordered collection (sequence) of elements, allowing duplicate values. Elements are accessed by their integer index.
-    ▪ ArrayList: A resizable array implementation of the List interface.
-    ▪ LinkedList: A doubly-linked list implementation of the List interface.
+    - Represents an ordered collection (sequence) of elements, allowing duplicate values. Elements are accessed by their integer index.
+        - ArrayList: A resizable array implementation of the List interface.
+        - LinkedList: A doubly-linked list implementation of the List interface.
     
 - Set (interface):
 
-Represents a collection that does not allow duplicate elements. Sets do not maintain any specific order inherently, though some implementations do.
-    ▪ HashSet: Implements Set using a hash table for storage. Offers constant-time performance for basic operations (add, remove, contains, size).
-    ▪ LinkedHashSet: Maintains insertion order.
-    ▪ TreeSet: Stores elements in a sorted order.
+    - Represents a collection that does not allow duplicate elements. Sets do not maintain any specific order inherently, though some implementations do.
+        - HashSet: Implements Set using a hash table for storage. Offers constant-time performance for basic operations (add, remove, contains, size).
+        - LinkedHashSet: Maintains insertion order.
+        - TreeSet: Stores elements in a sorted order.
         
 - Map (interface):
   
- Stores key-value pairs, where keys must be unique, but values can be duplicated. Maps do not maintain any order naturally.
-    ▪ HashMap: Implements Map using a hash table. Provides fast lookups using hash codes.
-    ▪ LinkedHashMap: Maintains insertion order.
-    ▪ TreeMap: Stores key-value pairs in a sorted order based on the natural ordering of keys or a provided comparator.       
-    
+     - Stores key-value pairs, where keys must be unique, but values can be duplicated. Maps do not maintain any order naturally.
+         - HashMap: Implements Map using a hash table. Provides fast lookups using hash codes.
+         - LinkedHashMap: Maintains insertion order.
+         - TreeMap: Stores key-value pairs in a sorted order based on the natural ordering of keys or a provided comparator.       
+        
 - Iterator: An interface used to traverse elements in a Collection sequentially. Provides methods like hasNext(), next(), and remove().
     
 - Comparator: An interface used to define custom comparison logic for sorting objects, typically used when the class's natural ordering (if it implements Comparable) is not sufficient or when sorting objects of user-defined classes.
