@@ -97,7 +97,7 @@ The sources strongly advise restricting the use of `Optional` to specific scenar
 | **Using `Optional` as a Field/Property in a Class** (POJOs, DTOs, JPA Entities) | **Serialization issues:** Results in `NotSerializableException` if the class is `Serializable`. Causes unexpected JSON structures (e.g., `{"firstName":{"present":true}}`). **JPA/ORM issues:** Hibernate cannot determine the type for `java.util.Optional` during mapping. **Expression Languages:** Front-end templates often print the `String` representation (`Optional[value]`) instead of the contained value. | Use traditional fields (e.g., `String name`) and return `Optional` only via the getter if necessary (though this creates inconsistency). |
 | **Combining `isPresent()` and `get()`** | This pattern is verbose and functionally equivalent to performing manual null checks, which `Optional` is supposed to replace. | Use fluent alternatives like `ifPresent()`, `orElse()`, or `map()`. |
 
-
+***
 
 > For more detailed references : 
 
