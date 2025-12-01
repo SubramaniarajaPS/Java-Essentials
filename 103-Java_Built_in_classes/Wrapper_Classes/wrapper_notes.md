@@ -444,7 +444,7 @@ Integer i = 10;
 java.util.Optional<Integer> descriptor = i.describeConstable(); 
 ```
 
-## XI. Constable and System Descriptor Methods
+## XI. Structural design patterns
 
 The wrapper concept, which relies on composition, forms the basis for numerous formalized **structural design patterns**. These patterns define the architectural intent of wrapping one or more objects.
 
