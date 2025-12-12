@@ -531,3 +531,13 @@ These methods manage the internal representation (`unscaled value` and `scale`) 
 | **Decimal Point Movement** | `movePointLeft(int n)`, `movePointRight(int n)` | Creates an equivalent value by shifting the decimal point $n$ places (by modifying the scale). |
 | **Trailing Zero Control** | `stripTrailingZeros()` | Returns a numerically equal value with any trailing zeros removed from the representation. |
 | **Rounding/Plus** | `round(MathContext mc)`, `plus(MathContext mc)` | Returns the `BigDecimal` rounded according to the `MathContext` settings. |
+
+---
+
+> For reference : 
+
+[BigInteger and BigDecimal - Kunal Kushwaha Youtube](https://www.youtube.com/watch?v=lHtoypC-4Ps)
+
+[AtomicInteger - in28Minutes Youtube](https://www.youtube.com/watch?v=Wrue8Tf93MI)
+
+[AtomicBoolean - Douglas Schmidt Youtube](https://www.youtube.com/watch?v=F_804j2A4LM)
