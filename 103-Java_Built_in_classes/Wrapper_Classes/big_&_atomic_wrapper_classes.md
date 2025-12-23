@@ -269,7 +269,7 @@ Modular arithmetic methods return a non-negative result between 0 and `modulus -
 | Function/Method | Pseudo-code Value | Notes |
 | :--- | :--- | :--- |
 | `and(BigInteger val)` | `(this & val)` | |
-| `or(BigInteger val)` | `(this | val)` | |
+| `or(BigInteger val)` | `(this \| val)` | |
 | `xor(BigInteger val)` | `(this ^ val)` | |
 | `not()` | `(~this)` | |
 | `shiftLeft(int n)` | `(this << n)` | Shift distance `n` can be negative (performing a right shift). |
@@ -541,3 +541,11 @@ These methods manage the internal representation (`unscaled value` and `scale`) 
 [AtomicInteger - in28Minutes Youtube](https://www.youtube.com/watch?v=Wrue8Tf93MI)
 
 [AtomicBoolean - Douglas Schmidt Youtube](https://www.youtube.com/watch?v=F_804j2A4LM)
+
+[Java BigInteger - Medium Blog](https://medium.com/@pkgmalinda/java-biginteger-a-comprehensive-guide-3231f17ce27d)
+
+[Java BigInteger - GFG Blog](https://www.geeksforgeeks.org/java/biginteger-class-in-java/)
+
+[Java BigDecimal - Medium Blog](https://solutionsarchitecture.medium.com/mastering-big-decimals-in-java-understanding-implementation-performance-and-alternatives-7e3a3a96efc6)
+
+[Java BigDecimal - GFG Blog](https://www.geeksforgeeks.org/java/bigdecimal-class-java/) 
