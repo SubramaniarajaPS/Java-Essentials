@@ -145,4 +145,4 @@ Think of a **cashier in a store**. If a barcode fails to scan (**the exception**
 
 [Exception handling - Dev.java Blog](https://dev.java/learn/exceptions/)
 
-[Exceptions Handling basics - Programming with Mosh Youtube](hhttps://www.youtube.com/watch?v=_nmm0nZqIIY&t=2s)
+[Exceptions Handling basics - Programming with Mosh Youtube](https://www.youtube.com/watch?v=_nmm0nZqIIY&t=2s)
