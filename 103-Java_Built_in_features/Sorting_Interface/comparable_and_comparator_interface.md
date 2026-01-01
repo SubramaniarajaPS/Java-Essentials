@@ -1,6 +1,4 @@
-This comprehensive guide covers the **Comparable** and **Comparator** interfaces in Java, providing detailed explanations, comparisons, and code examples suitable for interview preparation.
-
----
+# Comparable and Comparator Interfaces
 
 ### **1. Overview of Sorting in Java**
 Sorting is a fundamental operation for organizing data. Java provides optimized built-in methods like `Arrays.sort()` for primitives and `Collections.sort()` for objects. However, for custom objects (e.g., a `Student` or `Player` class), these methods require specific logic to determine the order of objects.
