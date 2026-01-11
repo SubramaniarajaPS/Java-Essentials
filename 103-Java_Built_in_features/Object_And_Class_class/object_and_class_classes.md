@@ -346,6 +346,10 @@ public class ClassReflectionDemo {
 
 If the **`Object` class** is the **genetic DNA** that every organism starts with (providing basic survival functions like breathing, eating, and communicating), then the **`Class` class** is the **entire genome project** dedicated to studying that DNA—allowing you to inspect the structure, lineage, traits, and functions of the organism itself at any time during its lifetime.
 
+---
+**Note :** Do not forget to refer the Reflection API from the reference.
+
+---
 
 
 > For more detailed references : 
@@ -358,3 +362,8 @@ If the **`Object` class** is the **genetic DNA** that every organism starts with
 
 [Class class - Scalar Blog](https://www.scaler.com/topics/class-class-in-java/)
 
+[Reflection - Coding with John Youtube](https://www.youtube.com/watch?v=bhhMJSKNCQY)
+
+[Reflection - Will Tollefson Youtube](https://www.youtube.com/watch?v=5leYs4Cneos)
+
+[Reflection - Jenkov Blog](https://jenkov.com/tutorials/java-reflection/index.html)
