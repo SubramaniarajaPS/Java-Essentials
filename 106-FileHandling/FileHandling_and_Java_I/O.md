@@ -304,11 +304,331 @@ try (InputStream in = new FileInputStream("source.jpg");
 | **Monitoring** | `WatchService` | Receive notifications on file modification/creation. | Java 7 |
 | **Traversing** | `FileVisitor`, `SimpleFileVisitor` | Recursively walk directory trees safely. | Java 7 |
 
-## **8. Important Interview Concepts**
+## **8. Important Methods**
+
+Based on the provided sources, here are the code examples for the inbuilt methods of `Reader`, `Writer`, `Files`, and `Paths`.
+
+---
+
+### **1. Class: `java.io.Reader`**
+`Reader` is an abstract class for reading character streams. It defines the basic methods that subclasses (like `FileReader` or `BufferedReader`) implement.
+
+*   **`read()`**: Reads a single character. Returns the character as an integer or -1 if the end of the stream has been reached.
+    ```java
+    // Source:
+    int data = reader.read(); 
+    while (data != -1) {
+        char current = (char) data;
+        System.out.print(current);
+        data = reader.read();
+    }
+    ```
+
+*   **`read(char[] cbuf)`**: Reads characters into an array.
+    ```java
+    // Source:
+    char[] buffer = new char;
+    int numCharsRead = reader.read(buffer);
+    if (numCharsRead != -1) {
+        System.out.println("Read " + numCharsRead + " characters.");
+    }
+    ```
+
+*   **`skip(long n)`**: Skips over a specific number of characters.
+    ```java
+    // Source:
+    long charactersSkipped = reader.skip(5); // Skips 5 characters
+    ```
+
+*   **`ready()`**: Tells whether the stream is ready to be read (i.e., the buffer is not empty),.
+    ```java
+    // Source:
+    while (reader.ready()) {
+        System.out.println(reader.readLine());
+    }
+    ```
+
+*   **`mark(int readAheadLimit)`** & **`reset()`**: Marks the present position in the stream and resets to it later. Not all readers support this,.
+    ```java
+    // Source:
+    if (reader.markSupported()) {
+        reader.mark(100); // Mark position, read up to 100 chars
+        // ... read some data ...
+        reader.reset();   // Go back to the marked position
+    }
+    ```
+
+*   **`transferTo(Writer out)`**: Reads all characters from this reader and writes them to the given writer.
+    ```java
+    // Source:
+    try (Reader reader = new FileReader("input.txt");
+         Writer writer = new FileWriter("output.txt")) {
+        reader.transferTo(writer); // Java 10+
+    }
+    ```
+
+*   **`close()`**: Closes the stream and releases resources.
+    ```java
+    // Source:
+    // Best practice is using try-with-resources to close automatically
+    try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {
+        // read operations
+    } // close() is called here automatically
+    ```
+
+---
+
+### **2. Class: `java.io.Writer`**
+`Writer` is the abstract class for writing to character streams.
+
+*   **`write(int c)`**: Writes a single character.
+    ```java
+    // Source:
+    writer.write(97); // Writes 'a'
+    ```
+
+*   **`write(char[] cbuf)`**: Writes an array of characters.
+    ```java
+    // Source:
+    char[] chars = {'H', 'e', 'l', 'l', 'o'};
+    writer.write(chars);
+    ```
+
+*   **`write(String str)`**: Writes a string.
+    ```java
+    // Source:
+    writer.write("Hello World");
+    ```
+
+*   **`append(CharSequence csq)`**: Appends the specified character sequence to this writer. Returns the writer itself for chaining.
+    ```java
+    // Source:
+    writer.append("Appending text ");
+    ```
+
+*   **`flush()`**: Flushes the stream. If the stream has saved any characters from the various write() methods in a buffer, write them immediately to their intended destination.
+    ```java
+    // Source:
+    writer.write("Data");
+    writer.flush(); // Forces data to be written immediately
+    ```
+
+---
+
+### **3. Class: `java.nio.file.Paths` (and `Path.of`)**
+The `Paths` class (plural) is primarily a factory for creating `Path` objects.
+
+*   **`Paths.get(String first, String... more)`**: Converts a path string (or sequence of strings) into a `Path`.
+    ```java
+    // Source:
+    Path p1 = Paths.get("/tmp/foo");
+    // Source: - Joining parts
+    Path p2 = Paths.get("/articles", "baeldung"); 
+    ```
+
+*   **`Paths.get(URI uri)`**: Creates a Path from a URI.
+    ```java
+    // Source:
+    Path p = Paths.get(URI.create("file:///Users/joe/FileTest.java"));
+    ```
+
+*   **`Path.of(String first, String... more)`** (Java 11+): The modern factory method.
+    ```java
+    // Source:
+    Path debugFile = Path.of("/tmp/debug.log");
+    ```
+
+---
+
+### **4. Class: `java.nio.file.Path`**
+A `Path` represents a path in the file system (file or directory). It is syntactic and does not imply the file exists.
+
+*   **`getFileName()`**: Returns the file name or the last element of the sequence.
+    ```java
+    // Source:
+    Path p = Paths.get("/articles/baeldung/logs");
+    System.out.println(p.getFileName()); // Output: logs
+    ```
+
+*   **`getParent()`**: Returns the parent path.
+    ```java
+    // Source:
+    Path p = Paths.get("/articles/baeldung/logs");
+    System.out.println(p.getParent()); // Output: \articles\baeldung (system dependent)
+    ```
+
+*   **`getRoot()`**: Returns the root component.
+    ```java
+    // Source:
+    Path p = Paths.get("c:/articles/logs");
+    System.out.println(p.getRoot()); // Output: c:\
+    ```
+
+*   **`getName(int index)`**: Retrieves a name element by its index.
+    ```java
+    // Source:
+    Path p = Paths.get("/articles/baeldung/logs");
+    System.out.println(p.getName(0)); // Output: articles
+    System.out.println(p.getName(2)); // Output: logs
+    ```
+
+*   **`subpath(int beginIndex, int endIndex)`**: Returns a relative Path that is a subsequence of the name elements.
+    ```java
+    // Source:
+    Path p = Paths.get("/articles/baeldung/logs");
+    System.out.println(p.subpath(0, 2)); // Output: articles\baeldung
+    ```
+
+*   **`normalize()`**: Removes redundancies like `.` and `..` from the path.
+    ```java
+    // Source:
+    Path p = Paths.get("/home/./baeldung/articles");
+    System.out.println(p.normalize()); // Output: \home\baeldung\articles
+    ```
+
+*   **`toAbsolutePath()`**: Converts a path to its absolute representation.
+    ```java
+    // Source:
+    Path p = Paths.get("articles.html");
+    System.out.println(p.toAbsolutePath()); 
+    ```
+
+*   **`resolve(String other)`**: Joins two paths (appending `other` to the current path).
+    ```java
+    // Source:
+    Path p = Paths.get("/baeldung/articles");
+    System.out.println(p.resolve("java")); // Output: \baeldung\articles\java
+    ```
+
+*   **`relativize(Path other)`**: Constructs a relative path between this path and a given path.
+    ```java
+    // Source:
+    Path p1 = Paths.get("articles");
+    Path p2 = Paths.get("authors");
+    // How to get from articles to authors?
+    System.out.println(p1.relativize(p2)); // Output: ..\authors
+    ```
+
+*   **`toUri()`**: Converts the path to a URI string that can be opened in a browser.
+    ```java
+    // Source:
+    Path p = Paths.get("/home/baeldung/articles.html");
+    System.out.println(p.toUri()); // Output: file:///E:/home/baeldung/articles.html
+    ```
+
+---
+
+### **5. Class: `java.nio.file.Files`**
+The `Files` class contains static methods that operate on files, directories, or other types of files.
+
+*   **`createFile(Path path)`**: Creates a new and empty file.
+    ```java
+    // Source:
+    Path p = Paths.get("home/myfile.txt");
+    Files.createFile(p); 
+    ```
+
+*   **`createDirectory(Path dir)`**: Creates a new directory.
+    ```java
+    // Source:
+    Path p = Paths.get("home/myDir");
+    Files.createDirectory(p); 
+    ```
+
+*   **`exists(Path path)`** & **`notExists(Path path)`**: Checks if a file exists or not.
+    ```java
+    // Source:
+    Path p = Paths.get("home/user");
+    boolean exists = Files.exists(p);
+    ```
+
+*   **`copy(Path source, Path target)`**: Copies a file to a target file.
+    ```java
+    // Source:
+    Files.copy(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
+    ```
+
+*   **`move(Path source, Path target)`**: Moves or renames a file.
+    ```java
+    // Source:
+    Files.move(sourcePath, destPath, StandardCopyOption.REPLACE_EXISTING);
+    ```
+
+*   **`delete(Path path)`**: Deletes a file. Throws exception if file doesn't exist.
+    ```java
+    // Source:
+    Files.delete(path);
+    ```
+
+*   **`deleteIfExists(Path path)`**: Deletes a file only if it exists (no exception if missing).
+    ```java
+    // Source:
+    Files.deleteIfExists(path);
+    ```
+
+*   **`readAllLines(Path path)`**: Reads all lines from a file into a List.
+    ```java
+    // Source:
+    List<String> lines = Files.readAllLines(filePath);
+    lines.forEach(System.out::println);
+    ```
+
+*   **`write(Path path, byte[] bytes)`**: Writes bytes to a file.
+    ```java
+    // Source:
+    String content = "Hello World";
+    Files.write(filePath, content.getBytes(), StandardOpenOption.CREATE);
+    ```
+
+*   **`lines(Path path)`**: Returns a Stream of strings populated lazily from the file (Efficient for large files).
+    ```java
+    // Source:
+    try (Stream<String> stream = Files.lines(filePath)) {
+        stream.forEach(System.out::println);
+    }
+    ```
+
+*   **`walkFileTree(Path start, FileVisitor visitor)`**: Recursively walks a file tree.
+    ```java
+    // Source: - Simplified
+    Files.walkFileTree(sourcePath, new SimpleFileVisitor<Path>() {
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+            System.out.println("Visited: " + file);
+            return FileVisitResult.CONTINUE;
+        }
+    });
+    ```
+
+*   **`list(Path dir)`**: Returns a lazy Stream of the entries in the directory (not recursive).
+    ```java
+    // Source:
+    try (Stream<Path> stream = Files.list(dirPath)) {
+        stream.forEach(System.out::println);
+    }
+    ```
+
+*   **`newBufferedReader(Path path)`**: Opens a file for reading, returning a `BufferedReader`.
+    ```java
+    // Source:
+    try (BufferedReader reader = Files.newBufferedReader(path)) {
+        // read lines
+    }
+    ```
+
+*   **Check Attributes (`isReadable`, `isWritable`, `isDirectory`)**:
+    ```java
+    // Source:
+    boolean isDir = Files.isDirectory(path);
+    boolean canRead = Files.isReadable(path);
+    boolean canWrite = Files.isWritable(path);
+    ```
+
+## **9. Important Interview Concepts**
+
 *   **Virtual Threads (Java 21):** While NIO is non-blocking, Project Loom (Virtual Threads) allows writing simple blocking IO code (like `java.io`) that scales like NIO because the JVM handles the blocking cheaply.
 *   **Try-with-resources:** Always use this. It handles closing streams automatically (implements `AutoCloseable`), preventing memory leaks.
 *   **Decorator Pattern:** Java I/O heavily uses this (e.g., `new BufferedReader(new InputStreamReader(new FileInputStream(...)))`).
-
 
 ---
 
