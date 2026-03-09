@@ -217,7 +217,7 @@ Similar to other atomic classes, `AtomicReference` provides methods for differen
 ### 5. BigInteger
 
 ### Description and Purpose
-`BigInteger` represents immutable, arbitrary-precision integers. It is essential for handling numbers that exceed the capacity of primitive types like `long` (e.g., $2^{63}-1$), high-precision calculations, cryptography, or algorithms requiring modular arithmetic and GCD. Operations follow the semantics of Java's primitive integer arithmetic. `BigInteger` values are supported in the range $-2^{\text{Integer.MAX\_VALUE}}$ (exclusive) to $+2^{\text{Integer.MAX\_VALUE}}$ (exclusive).
+`BigInteger` represents immutable, arbitrary-precision integers. It is essential for handling numbers that exceed the capacity of primitive types like `long` (e.g., $2^{63}-1$), high-precision calculations, cryptography, or algorithms requiring modular arithmetic and GCD. Operations follow the semantics of Java's primitive integer arithmetic. `BigInteger` values are supported in the range **-2^{\text{Integer.MAX\_VALUE}} **(exclusive) to **+2^{\text{Integer.MAX\_VALUE}}** (exclusive).
 
 ### Constants
 The class provides predefined constants for common values:
